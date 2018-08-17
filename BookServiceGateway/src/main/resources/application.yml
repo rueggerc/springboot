@@ -1,0 +1,20 @@
+management:
+  security:
+    enabled: false
+    
+server:
+  port: 8088
+  
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka
+    
+      
+logging:
+  level:
+    com.rueggerllc.books.gateway: debug
+  file: C:\logs\BookServiceGateway.log
