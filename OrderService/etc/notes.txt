@@ -1,0 +1,3 @@
+database_url: jdbc:sqlserver://localhost:1434;database=rueggerllc;user=sa;password=Dakota123%
+HIBERNATE_DIALECT: org.hibernate.dialect.SQLServer2012Dialect
+JDBC_DRIVER_CLASS:com.microsoft.sqlserver.jdbc.SQLServerDriver
