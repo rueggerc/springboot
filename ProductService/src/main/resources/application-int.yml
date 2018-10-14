@@ -1,0 +1,15 @@
+server:
+  port: 8084
+  
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1434;database=rueggerllc;user=sa;password=Dakota123%
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: 
+   
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update

@@ -1,0 +1,13 @@
+server:
+  port: 8084
+  
+spring:
+  datasource:
+    url: ${database.url}
+    driverClassName: ${JDBC_DRIVER_CLASS}
+   
+  jpa:
+    database-platform: ${HIBERNATE_DIALECT}
+    show-sql: true
+    hibernate:
+      ddl-auto: update
