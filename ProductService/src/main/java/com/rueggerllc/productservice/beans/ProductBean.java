@@ -25,9 +25,6 @@ public class ProductBean {
 	@Column(name="quantity")
 	private int quantity;
 	
-	@Column(name="amount")
-	private int amount;
-	
 
 	public Long getId() {
 		return id;
@@ -60,15 +57,6 @@ public class ProductBean {
 	public void setDescription(String description) {
 		Description = description;
 	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
 
 	
 

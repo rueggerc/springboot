@@ -42,7 +42,7 @@ public class ProductServiceTest extends ProductServiceUnitTest {
 			ProductBean productBean = new ProductBean();
 			productBean.setProductID("P0000"+i);
 			productBean.setDescription("Product" +i);
-			productBean.setAmount(100+i);
+			productBean.setQuantity(100+i);
 			products.add(productBean);
 		}
 		return products;

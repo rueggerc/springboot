@@ -9,17 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductServiceTester {
 	
-	// private TestRestTemplate testRestTemplate = new TestRestTemplate();
-	
-	
 	public void doIt() {
 		System.out.println("DO IT!");
 	}
 	
-	public void getAllOrders(TestRestTemplate testRestTemplate) {
-		System.out.println("====== OrderServiceTester.getAllOrders BEGIN==========");
-		ResponseEntity<String> response = testRestTemplate.getForEntity("/v1/order-service/orders",String.class);
-		System.out.println("GET ORDERS RESPONSE=" + response.getBody());
+	public void getAllProducts(TestRestTemplate testRestTemplate) {
+		System.out.println("====== ProductServiceTester.getAllProducgts BEGIN==========");
+		ResponseEntity<String> response = testRestTemplate.getForEntity("/v1/product-service/products",String.class);
+		System.out.println("GET PRODUCTS RESPONSE=" + response.getBody());
 		
 		Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 		System.out.println("STATUS CODE CHECKS OUT");
