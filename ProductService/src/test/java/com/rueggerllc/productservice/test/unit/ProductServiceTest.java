@@ -7,41 +7,33 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.rueggerllc.productservice.beans.ProductBean;
+import com.rueggerllc.productservice.repository.ProductRepository;
 import com.rueggerllc.productservice.service.ProductService;
 
-public class ProductControllerTest extends ProductServiceUnitTest {
-
-	@Autowired 
-	private MockMvc mvc;
+public class ProductServiceTest extends ProductServiceUnitTest {
 	
 	@MockBean
-	private ProductService serviceMock;
+	private ProductRepository repoMock;
+	
+	@Autowired
+	private ProductService service;
 	
 	
 	@Test
 	public void testControllerGetAllProducts() throws Exception {
-		System.out.println("testControllerGetAllProducts BEGIN");
+		System.out.println("testServiceGetAllProducts BEGIN");
 		
 		// When
-		Mockito.when(serviceMock.getAllProducts())
+		Mockito.when(repoMock.findAll())
 		.thenReturn(getMockedProducts());
 		
-		// Then
-		MockHttpServletResponse response = mvc.perform(
-			MockMvcRequestBuilders.get("/v1/product-service/products")
-			.accept(MediaType.APPLICATION_JSON))
-			.andReturn().getResponse();
-		
-		String content = response.getContentAsString();
-		System.out.println("CONTENT=\n" + content);
-		
-		
+		List<ProductBean> products = service.getAllProducts();
+		for (ProductBean productBean : products) {
+			System.out.println("Next Product=" + productBean.getDescription());
+		}
+
 	}
 	
 	private List<ProductBean> getMockedProducts() {

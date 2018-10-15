@@ -1,8 +1,5 @@
 package com.rueggerllc.productservice.beans;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name="Order")
-@Table(name="orders")
+@Entity(name="Product")
+@Table(name="products")
 public class ProductBean {
 	
 	@Id
@@ -21,14 +18,15 @@ public class ProductBean {
 	@Column(name="product_id")
 	private String productID;
 	
+	@Column(name="description")
+	private String Description;
+	
+	
 	@Column(name="quantity")
 	private int quantity;
 	
-	@Column(name="date_ordered")
-	Date dateOrdered;
-	
 	@Column(name="amount")
-	private BigDecimal amount;
+	private int amount;
 	
 
 	public Long getId() {
@@ -55,23 +53,23 @@ public class ProductBean {
 		this.quantity = quantity;
 	}
 
-	public Date getDateOrdered() {
-		return dateOrdered;
+	public String getDescription() {
+		return Description;
 	}
 
-	public void setDateOrdered(Date dateOrdered) {
-		this.dateOrdered = dateOrdered;
+	public void setDescription(String description) {
+		Description = description;
 	}
 
-	public BigDecimal getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(BigDecimal amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	
+
+
 	
 
 }

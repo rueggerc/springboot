@@ -12,7 +12,7 @@ public interface ProductRepository extends CrudRepository<ProductBean,Long> {
 	
 	public Iterable<ProductBean> findByQuantity(int quantity);
 	
-	@Query("from Order o where o.productID=:productID")
+	@Query("from Product p where p.productID=:productID")
 	public Iterable<ProductBean> getFoo(@Param("productID") String productID);
 
 }
