@@ -11,6 +11,6 @@ import com.rueggerllc.productservice.ProductServiceApplication;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.MOCK,classes=ProductServiceApplication.class)
 @AutoConfigureMockMvc
-@ActiveProfiles("unit")
-public abstract class ProductServiceUnitTest  {
+// @ActiveProfiles("unit")
+public abstract class BaseUnitTest  {
 }

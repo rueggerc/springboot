@@ -13,7 +13,7 @@ import com.rueggerllc.productservice.beans.ProductBean;
 import com.rueggerllc.productservice.repository.ProductRepository;
 
 @DataJpaTest
-public class ProductServiceRepositoryTest extends ProductServiceUnitTest {
+public class ProductServiceRepositoryTest extends BaseUnitTest {
 	
 	
 	@Autowired

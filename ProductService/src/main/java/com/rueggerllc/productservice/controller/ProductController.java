@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,10 +29,20 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
+	@Autowired
+	private Environment environment;
+	
 	@RequestMapping(method=RequestMethod.GET,value="/products",produces={"application/json"})
 	public ResponseEntity<ProductResponse> getAllOrders() {
 		System.out.println("PRODUCT CONTROLLER GET ALL PRODUCTS SERVICE BEFORE");
-		System.out.println("Class=" + service.getClass().getName());
+		
+		String[] profiles = environment.getActiveProfiles();
+		for (String profile : profiles) {
+			System.out.println("ACTIVE PROFILE=" + profile);
+		}
+		
+		
+		
 		List<ProductBean> orders = service.getAllProducts();
 		for (ProductBean orderBean : orders) {
 			System.out.println("Next PRODUCT=" + orderBean.getProductID());

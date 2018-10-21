@@ -12,7 +12,7 @@ import com.rueggerllc.productservice.beans.ProductBean;
 import com.rueggerllc.productservice.repository.ProductRepository;
 import com.rueggerllc.productservice.service.ProductService;
 
-public class ProductServiceTest extends ProductServiceUnitTest {
+public class ProductServiceTest extends BaseUnitTest {
 	
 	@MockBean
 	private ProductRepository repoMock;

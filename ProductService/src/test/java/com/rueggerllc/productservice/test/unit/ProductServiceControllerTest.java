@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.rueggerllc.productservice.beans.ProductBean;
 import com.rueggerllc.productservice.service.ProductService;
 
-public class ProductControllerTest extends ProductServiceUnitTest {
+public class ProductServiceControllerTest extends BaseUnitTest {
 
 	@Autowired 
 	private MockMvc mvc;
